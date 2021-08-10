@@ -1,10 +1,11 @@
-import './App.css';
+import { Container } from 'react-bootstrap';
+import Calculator from './components/Calculator';
 
 function App() {
   return (
-    <div className="App">
-      <h1>My first react app</h1>
-    </div>
+    <Container>
+      <Calculator />
+    </Container>
   );
 }
 
