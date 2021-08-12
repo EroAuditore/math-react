@@ -1,15 +1,49 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+
 import { Col, Row, Button } from 'react-bootstrap';
+
+import calculate from '../Logic/calculate';
 
 class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: null,
+      next: '',
+      result: '0',
+      operation: null,
+    };
   }
 
+  resultDisplay = (result) => {
+    if (result.next) {
+      return result.next;
+    }
+    if (result.total !== null) {
+      return result.total;
+    }
+    return '0';
+  };
+
+  handleClick = (btnName) => {
+    const { next, total, operation } = this.state;
+
+    const obj = {
+      total,
+      next,
+      operation,
+    };
+    const result = calculate(obj, btnName);
+    this.setState({
+      result: this.resultDisplay(result),
+      next: result.next,
+      total: result.total,
+      operation: result.operation,
+    });
+  };
+
   render() {
-    const { handleClick, result } = this.props;
+    const { result } = this.state;
 
     return (
       <>
@@ -25,7 +59,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('AC')}
+              onClick={() => this.handleClick('AC')}
             >
               AC
             </Button>
@@ -34,7 +68,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('+/-')}
+              onClick={() => this.handleClick('+/-')}
             >
               +/-
             </Button>
@@ -43,7 +77,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('%')}
+              onClick={() => this.handleClick('%')}
             >
               %
             </Button>
@@ -52,7 +86,7 @@ class Calculator extends Component {
             <Button
               variant="warning"
               className="w-100"
-              onClick={() => handleClick('÷')}
+              onClick={() => this.handleClick('÷')}
             >
               ÷
             </Button>
@@ -63,7 +97,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('7')}
+              onClick={() => this.handleClick('7')}
             >
               7
             </Button>
@@ -72,7 +106,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('8')}
+              onClick={() => this.handleClick('8')}
             >
               8
             </Button>
@@ -81,7 +115,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('9')}
+              onClick={() => this.handleClick('9')}
             >
               9
             </Button>
@@ -90,7 +124,7 @@ class Calculator extends Component {
             <Button
               variant="warning"
               className="w-100"
-              onClick={() => handleClick('x')}
+              onClick={() => this.handleClick('x')}
             >
               x
             </Button>
@@ -101,7 +135,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('4')}
+              onClick={() => this.handleClick('4')}
             >
               4
             </Button>
@@ -110,7 +144,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('5')}
+              onClick={() => this.handleClick('5')}
             >
               5
             </Button>
@@ -119,7 +153,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('6')}
+              onClick={() => this.handleClick('6')}
             >
               6
             </Button>
@@ -128,7 +162,7 @@ class Calculator extends Component {
             <Button
               variant="warning"
               className="w-100"
-              onClick={() => handleClick('-')}
+              onClick={() => this.handleClick('-')}
             >
               -
             </Button>
@@ -139,7 +173,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('1')}
+              onClick={() => this.handleClick('1')}
             >
               1
             </Button>
@@ -148,7 +182,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('2')}
+              onClick={() => this.handleClick('2')}
             >
               2
             </Button>
@@ -157,7 +191,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('3')}
+              onClick={() => this.handleClick('3')}
             >
               3
             </Button>
@@ -166,7 +200,7 @@ class Calculator extends Component {
             <Button
               variant="warning"
               className="w-100"
-              onClick={() => handleClick('+')}
+              onClick={() => this.handleClick('+')}
             >
               +
             </Button>
@@ -177,7 +211,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('0')}
+              onClick={() => this.handleClick('0')}
             >
               0
             </Button>
@@ -186,7 +220,7 @@ class Calculator extends Component {
             <Button
               variant="secondary"
               className="w-100"
-              onClick={() => handleClick('.')}
+              onClick={() => this.handleClick('.')}
             >
               .
             </Button>
@@ -196,7 +230,7 @@ class Calculator extends Component {
             <Button
               variant="warning"
               className="w-100"
-              onClick={() => handleClick('=')}
+              onClick={() => this.handleClick('=')}
             >
               =
             </Button>
@@ -206,10 +240,5 @@ class Calculator extends Component {
     );
   }
 }
-
-Calculator.propTypes = {
-  handleClick: PropTypes.func.isRequired,
-  result: PropTypes.string.isRequired,
-};
 
 export default Calculator;
