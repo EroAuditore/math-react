@@ -44,11 +44,13 @@ class App extends Component {
   render() {
     const { result } = this.state;
     return (
-      <Container>
-        <Calculator
-          handleClick={(btnName) => this.handleClick(btnName)}
-          result={result}
-        />
+      <Container className="d-flex justify-content-center pt-4">
+        <div className="calc-container">
+          <Calculator
+            handleClick={(btnName) => this.handleClick(btnName)}
+            result={result}
+          />
+        </div>
       </Container>
     );
   }

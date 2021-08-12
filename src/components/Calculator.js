@@ -13,10 +13,9 @@ class Calculator extends Component {
 
     return (
       <>
-        <h2>Calculator:</h2>
         <Row>
           <Col xs={12} className="p-0">
-            <div className="bg-secondary text-end text-white pe-3">
+            <div className="bg-secondary text-end text-white pe-3 display">
               {result}
             </div>
           </Col>

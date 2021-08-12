@@ -5,3 +5,13 @@
 body {
   box-sizing: border-box;
 }
+
+.calc-container {
+  max-width: 400px;
+  min-width: 400px;
+  height: 600px;
+}
+
+.display {
+  height: 2.5rem;
+}
