@@ -70,12 +70,10 @@ export default function calculate(obj, buttonName) {
       return {
         total: operate(obj.total, obj.next, obj.operation),
         next: null,
-        operation: null,
       };
     }
     // '=' with no operation, nothing to do
     return {
-      operation: buttonName,
       total: obj.total,
       next: obj.next,
     };
@@ -101,7 +99,6 @@ export default function calculate(obj, buttonName) {
   // a number first, do nothing.
   if (!obj.next && !obj.total) {
     return {
-      operation: buttonName,
       total: obj.total,
       next: obj.next,
     };
@@ -120,7 +117,10 @@ export default function calculate(obj, buttonName) {
 
   // The user hasn't typed a number yet, just save the operation
   if (!obj.next) {
-    return { operation: buttonName, total: obj.total, next: obj.next };
+    if (obj.total !== null) {
+      return { total: obj.total, next: null, operation: buttonName };
+    }
+    return { total: obj.total, next: obj.next };
   }
 
   // save the operation and shift 'next' into 'total'
