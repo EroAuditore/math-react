@@ -39,17 +39,14 @@ class App extends Component {
       total: result.total,
       operation: result.operation,
     });
-    console.log(result);
   };
 
   render() {
-    const { total, next, result } = this.state;
+    const { result } = this.state;
     return (
       <Container>
         <Calculator
           handleClick={(btnName) => this.handleClick(btnName)}
-          total={total}
-          next={next}
           result={result}
         />
       </Container>

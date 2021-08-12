@@ -210,8 +210,7 @@ class Calculator extends Component {
 
 Calculator.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  total: PropTypes.string,
-  next: PropTypes.string,
+  result: PropTypes.string.isRequired,
 };
 
 export default Calculator;
