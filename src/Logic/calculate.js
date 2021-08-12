@@ -28,7 +28,6 @@ export default function calculate(obj, buttonName) {
     }
     // If there is an operation, update next
     if (obj.operation) {
-      console.log('operation 31');
       if (obj.next) {
         return { next: obj.next + buttonName };
       }
@@ -67,7 +66,6 @@ export default function calculate(obj, buttonName) {
   }
 
   if (buttonName === '=') {
-    console.log('L 72', obj);
     if (obj.next && obj.operation) {
       return {
         total: operate(obj.total, obj.next, obj.operation),
@@ -76,7 +74,11 @@ export default function calculate(obj, buttonName) {
       };
     }
     // '=' with no operation, nothing to do
-    return {};
+    return {
+      operation: buttonName,
+      total: obj.total,
+      next: obj.next,
+    };
   }
 
   if (buttonName === '+/-') {
@@ -86,7 +88,11 @@ export default function calculate(obj, buttonName) {
     if (obj.total) {
       return { total: (-1 * parseFloat(obj.total)).toString() };
     }
-    return {};
+    return {
+      operation: buttonName,
+      total: obj.total,
+      next: obj.next,
+    };
   }
 
   // Button must be an operation
@@ -94,12 +100,15 @@ export default function calculate(obj, buttonName) {
   // When the user presses an operation button without having entered
   // a number first, do nothing.
   if (!obj.next && !obj.total) {
-    return {};
+    return {
+      operation: buttonName,
+      total: obj.total,
+      next: obj.next,
+    };
   }
 
   // User pressed an operation button and there is an existing operation
   if (obj.operation) {
-    console.log('total 101');
     return {
       total: operate(obj.total, obj.next, obj.operation),
       next: null,
@@ -111,7 +120,6 @@ export default function calculate(obj, buttonName) {
 
   // The user hasn't typed a number yet, just save the operation
   if (!obj.next) {
-    console.log('total 114');
     return { operation: buttonName, total: obj.total, next: obj.next };
   }
 

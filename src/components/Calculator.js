@@ -53,9 +53,9 @@ class Calculator extends Component {
             <Button
               variant="warning"
               className="w-100"
-              onClick={() => handleClick('/')}
+              onClick={() => handleClick('÷')}
             >
-              /
+              ÷
             </Button>
           </Col>
         </Row>
