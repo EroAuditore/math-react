@@ -30,13 +30,22 @@ const Calculator = () => {
       next,
       operation,
     };
-    const resultCalculate = calculate(obj, btnName);
-    setCalcState({
-      result: resultDisplay(resultCalculate),
-      next: resultCalculate.next,
-      total: resultCalculate.total,
-      operation: resultCalculate.operation,
-    });
+    try {
+      const resultCalculate = calculate(obj, btnName);
+      setCalcState({
+        result: resultDisplay(resultCalculate),
+        next: resultCalculate.next,
+        total: resultCalculate.total,
+        operation: resultCalculate.operation,
+      });
+    } catch {
+      setCalcState({
+        result: 'Error',
+        next: '',
+        total: null,
+        operation: null,
+      });
+    }
   };
 
   const { result } = calcState;
