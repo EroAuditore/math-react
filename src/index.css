@@ -15,3 +15,15 @@ body {
 .display {
   height: 2.5rem;
 }
+
+.img-magic {
+  height: 30rem;
+  background-image: url('https://cdn.nohat.cc/thumb/f/720/comdlpng6960754.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bold-text {
+  font-weight: 700;
+}

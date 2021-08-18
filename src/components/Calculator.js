@@ -52,195 +52,204 @@ const Calculator = () => {
 
   return (
     <>
-      <Row>
-        <Col xs={12} className="p-0">
-          <div className="bg-secondary text-end text-white pe-3 display">
-            {result}
-          </div>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('AC')}
-          >
-            AC
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('+/-')}
-          >
-            +/-
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('%')}
-          >
-            %
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="warning"
-            className="w-100"
-            onClick={() => handleClick('÷')}
-          >
-            ÷
-          </Button>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('7')}
-          >
-            7
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('8')}
-          >
-            8
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('9')}
-          >
-            9
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="warning"
-            className="w-100"
-            onClick={() => handleClick('x')}
-          >
-            x
-          </Button>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('4')}
-          >
-            4
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('5')}
-          >
-            5
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('6')}
-          >
-            6
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="warning"
-            className="w-100"
-            onClick={() => handleClick('-')}
-          >
-            -
-          </Button>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('1')}
-          >
-            1
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('2')}
-          >
-            2
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('3')}
-          >
-            3
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="warning"
-            className="w-100"
-            onClick={() => handleClick('+')}
-          >
-            +
-          </Button>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={6} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('0')}
-          >
-            0
-          </Button>
-        </Col>
-        <Col xs={3} className="p-0">
-          <Button
-            variant="secondary"
-            className="w-100"
-            onClick={() => handleClick('.')}
-          >
-            .
-          </Button>
-        </Col>
+      <div className="row w-100">
+        <div className="col-6 d-flex flex-column align-items-center justify-content-center">
+          <h5 className="text-primary bold-text">Lets do some math!</h5>
+        </div>
+        <div className="col-6 d-flex flex-column align-items-center justify-content-center">
+          <div className="w-100">
+            <Row>
+              <Col xs={12} className="p-0">
+                <div className="bg-secondary text-end text-white pe-3 display">
+                  {result}
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('AC')}
+                >
+                  AC
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('+/-')}
+                >
+                  +/-
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('%')}
+                >
+                  %
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="warning"
+                  className="w-100"
+                  onClick={() => handleClick('÷')}
+                >
+                  ÷
+                </Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('7')}
+                >
+                  7
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('8')}
+                >
+                  8
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('9')}
+                >
+                  9
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="warning"
+                  className="w-100"
+                  onClick={() => handleClick('x')}
+                >
+                  x
+                </Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('4')}
+                >
+                  4
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('5')}
+                >
+                  5
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('6')}
+                >
+                  6
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="warning"
+                  className="w-100"
+                  onClick={() => handleClick('-')}
+                >
+                  -
+                </Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('1')}
+                >
+                  1
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('2')}
+                >
+                  2
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('3')}
+                >
+                  3
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="warning"
+                  className="w-100"
+                  onClick={() => handleClick('+')}
+                >
+                  +
+                </Button>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={6} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('0')}
+                >
+                  0
+                </Button>
+              </Col>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="secondary"
+                  className="w-100"
+                  onClick={() => handleClick('.')}
+                >
+                  .
+                </Button>
+              </Col>
 
-        <Col xs={3} className="p-0">
-          <Button
-            variant="warning"
-            className="w-100"
-            onClick={() => handleClick('=')}
-          >
-            =
-          </Button>
-        </Col>
-      </Row>
+              <Col xs={3} className="p-0">
+                <Button
+                  variant="warning"
+                  className="w-100"
+                  onClick={() => handleClick('=')}
+                >
+                  =
+                </Button>
+              </Col>
+            </Row>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
